@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="520" viewBox="0 0 1400 520" role="img" aria-label="Write contract: each screen control mapped to an object and field in the system of record, with its verdict" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow-gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#475569"/>
+    </marker>
+  </defs>
+
+  <rect width="1400" height="520" fill="#f7f8fa"/>
+
+  <text x="55" y="48" font-size="28" font-weight="700" fill="#0f172a">The write contract: a control stays only if it has somewhere to land</text>
+  <text x="55" y="78" font-size="18" fill="#334155">Map each control to an object and a field in the system of record. The verdict follows the destination, not the design.</text>
+
+  <text x="55" y="118" font-size="18" font-weight="700" fill="#0f172a">Screen control</text>
+  <text x="430" y="118" font-size="18" font-weight="700" fill="#0f172a">Target object and field in the system of record</text>
+  <text x="990" y="118" font-size="18" font-weight="700" fill="#0f172a">Verdict</text>
+
+  <!-- Row 1 -->
+  <rect x="55" y="134" width="300" height="44" rx="6" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="69" y="163" font-size="18" fill="#0f172a">Create task</text>
+  <line x1="361" y1="156" x2="422" y2="156" stroke="#475569" stroke-width="2" marker-end="url(#arrow-gray)"/>
+  <rect x="430" y="134" width="500" height="44" rx="6" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="444" y="163" font-size="18" fill="#0f172a">Task: subject, due_date, owner, type</text>
+  <line x1="936" y1="156" x2="982" y2="156" stroke="#475569" stroke-width="2" marker-end="url(#arrow-gray)"/>
+  <rect x="990" y="134" width="355" height="44" rx="6" fill="#d1fae5" stroke="#047857" stroke-width="1.5"/>
+  <text x="1004" y="163" font-size="18" font-weight="700" fill="#064e3b">Stays</text>
+
+  <!-- Row 2 -->
+  <rect x="55" y="190" width="300" height="44" rx="6" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="69" y="219" font-size="18" fill="#0f172a">Update stage</text>
+  <line x1="361" y1="212" x2="422" y2="212" stroke="#475569" stroke-width="2" marker-end="url(#arrow-gray)"/>
+  <rect x="430" y="190" width="500" height="44" rx="6" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="444" y="219" font-size="18" fill="#0f172a">Deal: stage (closed list, stored as API slug)</text>
+  <line x1="936" y1="212" x2="982" y2="212" stroke="#475569" stroke-width="2" marker-end="url(#arrow-gray)"/>
+  <rect x="990" y="190" width="355" height="44" rx="6" fill="#d1fae5" stroke="#047857" stroke-width="1.5"/>
+  <text x="1004" y="219" font-size="18" font-weight="700" fill="#064e3b">Stays</text>
+
+  <!-- Row 3 -->
+  <rect x="55" y="246" width="300" height="44" rx="6" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="69" y="275" font-size="18" fill="#0f172a">Log blocker</text>
+  <line x1="361" y1="268" x2="422" y2="268" stroke="#475569" stroke-width="2" marker-end="url(#arrow-gray)"/>
+  <rect x="430" y="246" width="500" height="44" rx="6" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="444" y="275" font-size="18" fill="#0f172a">Deal: blocker (field does not exist yet)</text>
+  <line x1="936" y1="268" x2="982" y2="268" stroke="#475569" stroke-width="2" marker-end="url(#arrow-gray)"/>
+  <rect x="990" y="246" width="355" height="44" rx="6" fill="#fef3c7" stroke="#b45309" stroke-width="1.5"/>
+  <text x="1004" y="275" font-size="18" font-weight="700" fill="#78350f">Stays once the field exists</text>
+
+  <!-- Row 4 -->
+  <rect x="55" y="302" width="300" height="44" rx="6" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="69" y="331" font-size="18" fill="#0f172a">Snooze suggestion</text>
+  <line x1="361" y1="324" x2="422" y2="324" stroke="#475569" stroke-width="2" marker-end="url(#arrow-gray)"/>
+  <rect x="430" y="302" width="500" height="44" rx="6" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="444" y="331" font-size="18" fill="#0f172a">None: a fact about the agent, not the customer</text>
+  <line x1="936" y1="324" x2="982" y2="324" stroke="#475569" stroke-width="2" marker-end="url(#arrow-gray)"/>
+  <rect x="990" y="302" width="355" height="44" rx="6" fill="#e2e8f0" stroke="#475569" stroke-width="1.5"/>
+  <text x="1004" y="331" font-size="18" font-weight="700" fill="#1e293b">Agent store, never the record</text>
+
+  <!-- Row 5 -->
+  <rect x="55" y="358" width="300" height="44" rx="6" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="69" y="387" font-size="18" fill="#0f172a">Mark as priority</text>
+  <line x1="361" y1="380" x2="422" y2="380" stroke="#475569" stroke-width="2" marker-end="url(#arrow-gray)"/>
+  <rect x="430" y="358" width="500" height="44" rx="6" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="444" y="387" font-size="18" fill="#0f172a">None: no field, and the owner declined one</text>
+  <line x1="936" y1="380" x2="982" y2="380" stroke="#475569" stroke-width="2" marker-end="url(#arrow-gray)"/>
+  <rect x="990" y="358" width="355" height="44" rx="6" fill="#fee2e2" stroke="#b42318" stroke-width="1.5"/>
+  <text x="1004" y="387" font-size="18" font-weight="700" fill="#7f1d1d">Leaves, becomes a CRM link</text>
+
+  <!-- Minimum contract -->
+  <text x="55" y="436" font-size="18" font-weight="700" fill="#0f172a">Minimum contract of every write</text>
+  <text x="55" y="464" font-size="18" fill="#334155">Author · Previous value · Proposed value · Written value</text>
+  <text x="55" y="490" font-size="18" fill="#334155">Origin · Acceptance channel · Timestamps · Limitation</text>
+
+  <!-- Callout -->
+  <rect x="990" y="420" width="355" height="76" rx="8" fill="#0f172a"/>
+  <text x="1167" y="465" font-size="19" font-weight="700" fill="#ffffff" text-anchor="middle">No destination = no control</text>
+</svg>

@@ -1,6 +1,6 @@
 # The rules, with reasoning and anti-pattern
 
-Companion to [SKILL.md](../SKILL.md). The reasoning matters as much as the rule. Without it a rule becomes superstition and someone breaks it, for a good reason, without knowing.
+Companion to [SKILL.md](../SKILL.md). The reasoning matters as much as the rule. Without it a rule becomes superstition and someone breaks it, for a good reason, without knowing. Examples use the fictional Acme Field Sales Assistant.
 
 ## 1. Single accent
 
@@ -12,7 +12,7 @@ When you open an exception, rewrite the rule instead of breaking it in silence. 
 
 Compute the contrast ratio of white and of black on the accent and pick the winner. The answer differs by color: white wins on dark and mid-dark fills, black often wins on bright ones. Black on a bright accent looks odd for two days and then looks obvious.
 
-Implementation note: changing ink color breaks anything that was already that color. A level chip that was black on black inside a filled button disappears. Every ink change needs a sweep of the children.
+Implementation note: changing the ink color breaks anything that was already that color. A chip with black text inside a button whose ink turns black disappears. Every ink change needs a sweep of the children.
 
 ## 3. Alpha grays
 
@@ -68,15 +68,21 @@ A queue of 25 items with one extra button is 25 extra decisions a day. Corollary
 
 ## 11. One question per control
 
-The case that produced this rule: a single select mixed "snooze to tomorrow", "snooze to next week", "not relevant", "already done" and "wrong data". The first two answer when. The last three answer why. The user had to compare things that do not compare, and what they chose stopped meaning what it appeared to mean. Split it into two controls.
+The pattern: one select that mixes answers to "when" with answers to "why". In the Acme queue, a single dropdown on each card offered "snooze to tomorrow", "snooze to next week", "not relevant", "already done" and "wrong data". The first two answer when. The last three answer why. The user compares things that do not compare, and what they choose stops meaning what it appears to mean: a snooze is read as a dismissal, a dismissal is read as a delay.
+
+The fix is two controls. `Snooze` with the when-options, `Dismiss` with the why-options. Each answers one question, and the agent's feedback data becomes usable.
 
 ## 12. Constant column is noise
 
-A pending-information table had a Status column that said "to ask" on every row, since the table only lists gaps. It is constant by construction. Removing it gave the question column more room.
+The pattern: a table built from a filter has a column that repeats the filter. In the Acme open-questions table, which lists only the gaps still to ask the customer, a Status column read "to ask" on every row. It is constant by construction.
+
+Remove it and put the constant in the section title: "Open questions (all still to ask)". The question column gets the room it needed.
 
 ## 13. Stacked bars
 
-Fixed header, context bar and sub-navigation, in that order. Put the scroll offset on the target section only. If a document-level offset and a section-level margin are both set, they add, and clicking a nav link lands the section far below where it should be. Add a regression check that asserts the document-level offset is `auto` and measures the landing position in pixels.
+Fixed header, context bar and sub-navigation, in that order. Put the scroll offset on the target section only.
+
+The pattern: a document-level scroll offset and a section-level margin are both set, so they add. Clicking "Needs attention" in the Acme sub-navigation lands the viewport in the middle of the "Later" section, and nobody can say why because each offset looks right on its own. Keep the offset on the target only, assert in a regression check that the document-level offset is `auto`, and measure the landing position in pixels.
 
 ## 14. Three ways to close
 
@@ -86,7 +92,7 @@ With the native `<dialog>`, a backdrop click arrives with the dialog itself as t
 
 **Order wins when specificity ties.** A component rule that sets `display: grid`, declared after a hidden-state rule that sets `display: none`, makes the form always visible. Put `display` in state rules, never in the component. When two rules tie, raise the specificity instead of hoping for file order.
 
-**Descendant selectors leak.** `.card-id b { font-size: 18px }` also hit a `<b>` used for a status inside the same block, and the status became a title. Use the child combinator when the rule is about a direct child.
+**Descendant selectors leak.** `.deal-card b { font-size: 18px }` also hits a `<b>` used for a status inside the same card, and the status becomes a title. Use the child combinator when the rule is about a direct child.
 
 ## Measure, do not look
 
@@ -99,4 +105,4 @@ const start = el.getBoundingClientRect().left
 rect.right > containerRect.right + 1
 ```
 
-A clipped action-plus-link pair that only existed at one viewport width went unnoticed because the audit ran at a different width. Whoever measures at one width does not measure.
+A control that is clipped at one viewport width is invisible to an audit run at another. On the Acme queue card, the Approve button and the "Open in CRM" link fit at 1440 px and the link is cut at 1280 px. Whoever measures at one width does not measure.

@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="640" viewBox="0 0 1400 640" role="img" aria-label="Autonomy ladder: five tiers, the evidence that promotes an action onto each, the cap for irreversible actions and the demotion rule" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#b42318"/>
+    </marker>
+  </defs>
+
+  <rect width="1400" height="640" fill="#f7f8fa"/>
+
+  <text x="55" y="52" font-size="30" font-weight="700" fill="#0f172a">Autonomy is earned per action type, one tier at a time</text>
+  <text x="55" y="84" font-size="18" fill="#334155">Each step names the evidence that promotes an action onto it. Thresholds are set per action type and risk.</text>
+
+  <!-- Demotion legend -->
+  <line x1="55" y1="134" x2="92" y2="134" stroke="#b42318" stroke-width="3" marker-end="url(#arrow-red)"/>
+  <text x="105" y="140" font-size="18" font-weight="700" fill="#b42318">Demotion drops one tier at once, when:</text>
+  <text x="55" y="166" font-size="18" fill="#334155">a safe failure happens in production, the pass</text>
+  <text x="55" y="190" font-size="18" fill="#334155">rate drops on a fresh sample, upstream data or the</text>
+  <text x="55" y="214" font-size="18" fill="#334155">model changed unscored, or overrides rise.</text>
+
+  <!-- Cap legend -->
+  <line x1="55" y1="242" x2="92" y2="242" stroke="#b42318" stroke-width="2.5" stroke-dasharray="8 6"/>
+  <text x="105" y="248" font-size="18" font-weight="700" fill="#b42318">Cap for irreversible actions</text>
+  <text x="55" y="274" font-size="18" fill="#334155">An email to a customer, a deletion, a payment:</text>
+  <text x="55" y="298" font-size="18" fill="#334155">the action stays at tier 2 until the owner</text>
+  <text x="55" y="322" font-size="18" fill="#334155">accepts the cost of one error, in writing.</text>
+
+  <!-- Steps -->
+  <rect x="55" y="480" width="250" height="120" rx="6" fill="#e9eef5" stroke="#3b5f8f" stroke-width="1.5"/>
+  <text x="69" y="510" font-size="20" font-weight="700" fill="#0f172a">0 · Observe</text>
+  <text x="69" y="538" font-size="18" fill="#1e293b">Agent: reads, reports</text>
+  <text x="69" y="562" font-size="18" fill="#1e293b">Human: does everything</text>
+  <text x="69" y="590" font-size="18" fill="#475569">Starting tier</text>
+
+  <rect x="315" y="410" width="250" height="190" rx="6" fill="#d7e1ee" stroke="#3b5f8f" stroke-width="1.5"/>
+  <text x="329" y="440" font-size="20" font-weight="700" fill="#0f172a">1 · Alert</text>
+  <text x="329" y="468" font-size="18" fill="#1e293b">Agent: flags items</text>
+  <text x="329" y="492" font-size="18" fill="#1e293b">Human: decides, acts</text>
+  <text x="329" y="528" font-size="18" font-weight="700" fill="#0f172a">To enter:</text>
+  <text x="329" y="554" font-size="18" fill="#1e293b">reads correctly on</text>
+  <text x="329" y="578" font-size="18" fill="#1e293b">the frozen set</text>
+
+  <rect x="575" y="340" width="250" height="260" rx="6" fill="#c1d2e6" stroke="#3b5f8f" stroke-width="1.5"/>
+  <text x="589" y="370" font-size="20" font-weight="700" fill="#0f172a">2 · Propose</text>
+  <text x="589" y="398" font-size="18" fill="#1e293b">Agent: drafts fully</text>
+  <text x="589" y="422" font-size="18" fill="#1e293b">Human: approves each</text>
+  <text x="589" y="458" font-size="18" font-weight="700" fill="#0f172a">To enter:</text>
+  <text x="589" y="484" font-size="18" fill="#1e293b">held-out pass rate</text>
+  <text x="589" y="508" font-size="18" fill="#1e293b">over threshold</text>
+  <text x="589" y="532" font-size="18" fill="#1e293b">never-cases: zero</text>
+  <text x="589" y="556" font-size="18" fill="#1e293b">owner signs</text>
+
+  <rect x="835" y="270" width="250" height="330" rx="6" fill="#a6bedb" stroke="#3b5f8f" stroke-width="1.5"/>
+  <text x="849" y="300" font-size="20" font-weight="700" fill="#0f172a">3 · Act with review</text>
+  <text x="849" y="326" font-size="18" fill="#1e293b">Agent: executes, undo</text>
+  <text x="849" y="372" font-size="18" fill="#1e293b">Human: reviews sample</text>
+  <text x="849" y="404" font-size="18" font-weight="700" fill="#0f172a">To enter:</text>
+  <text x="849" y="430" font-size="18" fill="#1e293b">score held on two</text>
+  <text x="849" y="454" font-size="18" fill="#1e293b">runs, two days</text>
+  <text x="849" y="478" font-size="18" fill="#1e293b">shadow weeks agree</text>
+  <text x="849" y="502" font-size="18" fill="#1e293b">undo + trail tested</text>
+  <text x="849" y="526" font-size="18" fill="#1e293b">guardrails exercised</text>
+  <text x="849" y="550" font-size="18" fill="#1e293b">owner signs</text>
+
+  <rect x="1095" y="200" width="250" height="400" rx="6" fill="#8aaad0" stroke="#3b5f8f" stroke-width="1.5"/>
+  <text x="1109" y="230" font-size="20" font-weight="700" fill="#0f172a">4 · Act alone</text>
+  <text x="1109" y="256" font-size="18" fill="#0f172a">Agent: acts, reports</text>
+  <text x="1109" y="280" font-size="18" fill="#0f172a">Human: reads summary</text>
+  <text x="1109" y="312" font-size="18" font-weight="700" fill="#0f172a">To enter:</text>
+  <text x="1109" y="372" font-size="18" fill="#0f172a">higher threshold</text>
+  <text x="1109" y="396" font-size="18" fill="#0f172a">on fresh data</text>
+  <text x="1109" y="420" font-size="18" fill="#0f172a">never-cases: zero</text>
+  <text x="1109" y="444" font-size="18" fill="#0f172a">in production too</text>
+  <text x="1109" y="468" font-size="18" fill="#0f172a">weekly sample read</text>
+  <text x="1109" y="492" font-size="18" fill="#0f172a">by a person</text>
+  <text x="1109" y="516" font-size="18" fill="#0f172a">guardrails stay on</text>
+  <text x="1109" y="540" font-size="18" fill="#0f172a">owner signs</text>
+
+  <!-- Cap line for irreversible actions: the top of tier 2 -->
+  <line x1="55" y1="340" x2="826" y2="340" stroke="#b42318" stroke-width="2.5" stroke-dasharray="10 7"/>
+
+  <!-- Demotion arrow: one tier at once -->
+  <path d="M 1180 194 C 1120 130, 1030 130, 978 262" fill="none" stroke="#b42318" stroke-width="3" marker-end="url(#arrow-red)"/>
+  <text x="1080" y="122" font-size="18" font-weight="700" fill="#b42318" text-anchor="middle">Demotion drops one tier at once</text>
+
+  <text x="55" y="628" font-size="18" fill="#475569">Illustrative thresholds: 0.90 to enter tier 2, 0.95 for tier 3, 0.98 for tier 4. Set your own per action type and risk.</text>
+</svg>

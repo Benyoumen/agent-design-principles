@@ -1,17 +1,24 @@
 ---
 name: dense-operations-ui
-description: Design rules for a dense operator screen that a professional opens every day, under time pressure, to decide rather than to admire. Portable to any operator panel, decision queue, agent console, internal CRM or back-office tool. Fourteen named rules on color, type, numbers, density, action and behavior, plus a button vocabulary and a list of anti-patterns. Use when designing, critiquing or rewriting an operations screen, or when a screen "looks like AI slop" or "is too crowded".
+description: Fourteen named design rules for a dense operator screen that a professional opens every day, under time pressure, to decide, plus a button vocabulary and a measured audit. Use it to design, critique or rewrite any operator panel, decision queue, agent console or back-office tool, including when a screen "looks like AI slop" or "is too crowded".
+license: MIT
+metadata:
+  version: "1.1"
+  author: Benjamin Tayar
+  method: agent-design-principles
 ---
 
 # Dense operations UI
+
+> A working screen is a decision tool: dense, legible, quiet, and measured rather than eyeballed.
 
 An operations screen fails in two opposite ways. It is flat and generic, so it looks like an admin template and the user cannot remember where they were. Or it is baroque: every concept became a chip, every rule became a line of text, and the user stops reading. These rules avoid both at once. Each one is named because a name can be cited in review.
 
 The audience is always the same: someone who opens this every day, in a hurry, to decide. Not the buyer, not an executive in a presentation, not the designer admiring the work.
 
-Detail, reasoning and anti-pattern per rule are in [reference/rules.md](reference/rules.md).
+Reasoning and anti-pattern per rule are in [reference/rules.md](reference/rules.md).
 
-## Modes
+## When to use
 
 | Mode | Use it when | Output |
 |---|---|---|
@@ -19,9 +26,25 @@ Detail, reasoning and anti-pattern per rule are in [reference/rules.md](referenc
 | `critique <target>` | After rendering | Violation by violation: the rule broken, the evidence, the fix |
 | `apply <target>` | When rewriting the generator or stylesheet | The proposed diff, rule by rule |
 
-Recommended order: `agentic-ux` (what the screen must say about the agent), then this skill (how to say it without clutter), then a visual polish pass.
+Recommended order: `agentic-ux` (what the screen must say about the agent), then this skill (how to say it without clutter), then a visual polish pass. Not for persuasion pages or marketing sites.
 
-## The fourteen rules
+## Inputs
+
+1. The primary user and the decision the screen serves.
+2. The rendered screen at a narrow and a wide viewport, or the generator and stylesheet for `apply`.
+3. The design tokens in use: the accent, the ink, the type scale.
+4. The vocabulary of the destination system (object and field names), for the button verbs.
+
+## Procedure
+
+1. Name the primary user and the decision in one sentence.
+2. Sweep the fourteen rules in order: color and brand, type and number, density and action, structure and behavior. Record each violation as rule number, evidence, fix.
+3. Measure what cannot be judged by eye: contrast on every accent fill and every gray, text alignment, clipping inside scrolling containers. Measure at both viewport widths.
+4. Read every button label against the vocabulary rules.
+5. `rules`: paste the numbered rules into the brief. `critique`: report violation by violation. `apply`: propose the diff rule by rule, smallest change first.
+6. Record any exception as a rewrite of the rule, never as a silent break.
+
+## Rules
 
 ### Color and brand
 
@@ -49,7 +72,7 @@ Recommended order: `agentic-ux` (what the screen must say about the agent), then
 13. **Stacked bars.** Header, context and sub-navigation are fixed and in that order. The scroll offset lives on the target only, never added in two places. Adding it twice parks every section below where it should be and nobody can say why.
 14. **Three ways to close.** Every dialog closes by the button, by Escape and by clicking outside.
 
-## Vocabulary
+### Vocabulary
 
 The text ruler matters as much as the pixel ruler, and it is where most mistakes happen.
 
@@ -59,7 +82,7 @@ The text ruler matters as much as the pixel ruler, and it is where most mistakes
 - **Missing capture never becomes zero.** With no sensor, write `no data`. Zero is a claim about the world. Absence is a claim about the instrument.
 - **A limitation sits next to the decision it affects,** not in a footer.
 
-## Anti-patterns
+### Anti-patterns
 
 | Symptom | What is happening | Fix |
 |---|---|---|
@@ -69,7 +92,7 @@ The text ruler matters as much as the pixel ruler, and it is where most mistakes
 | A signal that fires on most of the base | The cut is too wide and became an alarm | Replace with the hard, actionable fact |
 | Two numbers that do not add up | The same item counted in two strips | One item, one count, each strip points to its own block |
 
-## Check by measuring
+### Check by measuring
 
 Alignment and clipping cannot be judged by eye. Two measurements settle most cases:
 
@@ -97,11 +120,39 @@ Run audits at more than one viewport width. A clipping bug that only exists at o
 - [ ] Every dialog closes three ways.
 - [ ] Every button verb names its effect.
 
-## Good and bad
+## Example
 
-Good: a KPI block with label `OPEN PIPELINE`, number `$870K`, reading `6 deals, synced 07:05`.
+Acme Field Sales Assistant, the pipeline header and the open-questions table.
 
-Bad: `6 deals · $870K · 2 stale · 1 late` on one line. Four numbers compressed is zero numbers read.
+Weak:
+
+```
+Pipeline: 6 deals · $870K · 2 stale · 1 late                 [Done]  [OK]
+
+Open questions
+question                      account        owner      status
+Confirm the renewal date      Northgate      Dana       to ask
+Who signs the order?          Harbor Foods   Luis       to ask
+```
+
+Four numbers compressed on one line is zero numbers read. The verbs say nothing about the effect. The status column says the same thing on every row, by construction.
+
+Corrected:
+
+```
+OPEN PIPELINE              STALE DEALS               LATE TASKS
+$870K                      2                         1
+6 deals · synced 07:05     no activity for 14+ days  due before today
+
+[Save to CRM]   Open in CRM
+
+Open questions (all still to ask)
+question                      account        owner
+Confirm the renewal date      Northgate      Dana
+Who signs the order?          Harbor Foods   Luis
+```
+
+Label above the number, the reading below it, the verb names the effect in the system, and the constant moved into the section title.
 
 ## Definition of done
 
@@ -110,6 +161,10 @@ Bad: `6 deals · $870K · 2 stale · 1 late` on one line. Four numbers compresse
 - A new user can say what every button does without asking.
 - The screen was checked at a narrow and a wide viewport.
 
-## What this skill does not cover
+## Related
 
-Agent presence, autonomy regimes, draft-to-approval and the activity trail belong to `agentic-ux`. Visual craft for persuasion pages belongs to a design polish pass. This skill is the ruler for density, legibility and action on a working screen.
+- [`agentic-ux`](../agentic-ux/SKILL.md): agent presence, autonomy regimes, draft-to-approval and the activity trail. This skill is the ruler for density, legibility and action once those are settled.
+- [`write-contract`](../write-contract/SKILL.md): the button verb names the effect in the system of record; the vocabulary comes from there.
+- [`autonomy-tiers-and-evals`](../autonomy-tiers-and-evals/SKILL.md): the tier of each action type is published where users can see it, which is a density decision too.
+- [reference/rules.md](reference/rules.md): reasoning and anti-pattern per rule, two CSS traps, the measurement snippets.
+- [Screen audit template](../../templates/screen-audit.md).
