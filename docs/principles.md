@@ -11,17 +11,16 @@ Four ideas hold this repo together.
 
 ```mermaid
 flowchart LR
-  A[Agent proposes an action] --> B{Has a destination in the system of record?}
-  B -- no --> C[Leaves the screen or becomes a link]
-  B -- yes --> D[Shown with its autonomy regime]
-  D --> E[Human reviews on a dense, legible screen]
-  E --> F[Write with author, previous, proposed, written, origin]
-  F --> G[Activity trail and undo]
-  G --> H[Golden set and shadow comparison]
-  H --> I{Tier promotion criteria met?}
-  I -- yes --> J[Promote one tier]
-  I -- no --> D
+  A["Agent proposes an action"] --> B{"Can the real system record it?"}
+  B -- "no" --> C["It leaves the screen"]
+  B -- "yes" --> D["A person reviews it"]
+  D --> E["Saved with a full record"]
+  E --> F{"Passes the test cases?"}
+  F -- "yes" --> G["Agent earns one more step"]
+  F -- "not yet" --> D
 ```
+
+*An action is shown only if the real system can record it; a person reviews it, the saved change is tested, and the agent gets more freedom only while it keeps passing.*
 
 ## Regimes on the screen, tiers behind them
 
@@ -38,22 +37,15 @@ The screen shows three regimes, because a card can carry one signal: acts alone 
 ![Autonomy ladder: five tiers, the evidence that promotes an action onto each, the cap for irreversible actions and the demotion rule](../assets/autonomy-ladder.svg)
 
 ```mermaid
-stateDiagram-v2
-  [*] --> Observe
-  Observe --> Alert: reads reliably
-  Alert --> Propose: held-out score meets threshold
-  Propose --> ActWithReview: score held, shadow agrees, undo tested, guardrails exercised, owner signs
-  ActWithReview --> ActAlone: higher threshold met on fresh data
-  ActAlone --> ActWithReview: safe failure or score drop
-  ActWithReview --> Propose: safe failure or score drop
-  Propose --> Alert: safe failure or score drop
-
-  Observe: Tier 0 Observe
-  Alert: Tier 1 Alert
-  Propose: Tier 2 Propose
-  ActWithReview: Tier 3 Act with review
-  ActAlone: Tier 4 Act alone
+flowchart LR
+  T0["Tier 0: Observe"] -- "reads correctly" --> T1["Tier 1: Alert"]
+  T1 -- "passes the test cases" --> T2["Tier 2: Propose"]
+  T2 -- "shadow use, undo, owner signs" --> T3["Tier 3: Act with review"]
+  T3 -- "keeps passing on new cases" --> T4["Tier 4: Act alone"]
+  T4 -. "mistake or drop: back one tier" .-> T3
 ```
+
+*An agent climbs one tier at a time, each tier needs proof, and a mistake at any tier sends it back one.*
 
 Irreversible actions have a cap at Tier 2 until the owner accepts the cost of an error in writing. Evals measure the average on the frozen set; guardrails stay on at every tier to protect the tail. Thresholds are set by the team, and every number in the skills is illustrative.
 

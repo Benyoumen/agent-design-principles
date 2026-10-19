@@ -29,7 +29,7 @@
   <text x="69" y="219" font-size="18" fill="#0f172a">Update stage</text>
   <line x1="361" y1="212" x2="422" y2="212" stroke="#475569" stroke-width="2" marker-end="url(#arrow-gray)"/>
   <rect x="430" y="190" width="500" height="44" rx="6" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5"/>
-  <text x="444" y="219" font-size="18" fill="#0f172a">Deal: stage (closed list, stored as API slug)</text>
+  <text x="444" y="219" font-size="18" fill="#0f172a">Deal: stage (one of a fixed list of values)</text>
   <line x1="936" y1="212" x2="982" y2="212" stroke="#475569" stroke-width="2" marker-end="url(#arrow-gray)"/>
   <rect x="990" y="190" width="355" height="44" rx="6" fill="#d1fae5" stroke="#047857" stroke-width="1.5"/>
   <text x="1004" y="219" font-size="18" font-weight="700" fill="#064e3b">Stays</text>
@@ -67,7 +67,7 @@
   <!-- Minimum contract -->
   <text x="55" y="436" font-size="18" font-weight="700" fill="#0f172a">Minimum contract of every write</text>
   <text x="55" y="464" font-size="18" fill="#334155">Author · Previous value · Proposed value · Written value</text>
-  <text x="55" y="490" font-size="18" fill="#334155">Origin · Acceptance channel · Timestamps · Limitation</text>
+  <text x="55" y="490" font-size="18" fill="#334155">Origin · How it was approved · Timestamps · Limitation</text>
 
   <!-- Callout -->
   <rect x="990" y="420" width="355" height="76" rx="8" fill="#0f172a"/>

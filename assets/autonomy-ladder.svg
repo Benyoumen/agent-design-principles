@@ -13,9 +13,9 @@
   <!-- Demotion legend -->
   <line x1="55" y1="134" x2="92" y2="134" stroke="#b42318" stroke-width="3" marker-end="url(#arrow-red)"/>
   <text x="105" y="140" font-size="18" font-weight="700" fill="#b42318">Demotion drops one tier at once, when:</text>
-  <text x="55" y="166" font-size="18" fill="#334155">a safe failure happens in production, the pass</text>
-  <text x="55" y="190" font-size="18" fill="#334155">rate drops on a fresh sample, upstream data or the</text>
-  <text x="55" y="214" font-size="18" fill="#334155">model changed unscored, or overrides rise.</text>
+  <text x="55" y="166" font-size="18" fill="#334155">a mistake happens in production, results drop</text>
+  <text x="55" y="190" font-size="18" fill="#334155">on new cases, the data or the model changed</text>
+  <text x="55" y="214" font-size="18" fill="#334155">without a new test, or people override it more.</text>
 
   <!-- Cap legend -->
   <line x1="55" y1="242" x2="92" y2="242" stroke="#b42318" stroke-width="2.5" stroke-dasharray="8 6"/>
@@ -36,17 +36,17 @@
   <text x="329" y="468" font-size="18" fill="#1e293b">Agent: flags items</text>
   <text x="329" y="492" font-size="18" fill="#1e293b">Human: decides, acts</text>
   <text x="329" y="528" font-size="18" font-weight="700" fill="#0f172a">To enter:</text>
-  <text x="329" y="554" font-size="18" fill="#1e293b">reads correctly on</text>
-  <text x="329" y="578" font-size="18" fill="#1e293b">the frozen set</text>
+  <text x="329" y="554" font-size="18" fill="#1e293b">reads the test cases</text>
+  <text x="329" y="578" font-size="18" fill="#1e293b">correctly</text>
 
   <rect x="575" y="340" width="250" height="260" rx="6" fill="#c1d2e6" stroke="#3b5f8f" stroke-width="1.5"/>
   <text x="589" y="370" font-size="20" font-weight="700" fill="#0f172a">2 · Propose</text>
   <text x="589" y="398" font-size="18" fill="#1e293b">Agent: drafts fully</text>
   <text x="589" y="422" font-size="18" fill="#1e293b">Human: approves each</text>
   <text x="589" y="458" font-size="18" font-weight="700" fill="#0f172a">To enter:</text>
-  <text x="589" y="484" font-size="18" fill="#1e293b">held-out pass rate</text>
-  <text x="589" y="508" font-size="18" fill="#1e293b">over threshold</text>
-  <text x="589" y="532" font-size="18" fill="#1e293b">never-cases: zero</text>
+  <text x="589" y="484" font-size="18" fill="#1e293b">passes the test cases</text>
+  <text x="589" y="508" font-size="18" fill="#1e293b">often enough</text>
+  <text x="589" y="532" font-size="18" fill="#1e293b">no forbidden actions</text>
   <text x="589" y="556" font-size="18" fill="#1e293b">owner signs</text>
 
   <rect x="835" y="270" width="250" height="330" rx="6" fill="#a6bedb" stroke="#3b5f8f" stroke-width="1.5"/>
@@ -54,11 +54,11 @@
   <text x="849" y="326" font-size="18" fill="#1e293b">Agent: executes, undo</text>
   <text x="849" y="372" font-size="18" fill="#1e293b">Human: reviews sample</text>
   <text x="849" y="404" font-size="18" font-weight="700" fill="#0f172a">To enter:</text>
-  <text x="849" y="430" font-size="18" fill="#1e293b">score held on two</text>
-  <text x="849" y="454" font-size="18" fill="#1e293b">runs, two days</text>
+  <text x="849" y="430" font-size="18" fill="#1e293b">passes twice,</text>
+  <text x="849" y="454" font-size="18" fill="#1e293b">two days apart</text>
   <text x="849" y="478" font-size="18" fill="#1e293b">shadow weeks agree</text>
-  <text x="849" y="502" font-size="18" fill="#1e293b">undo + trail tested</text>
-  <text x="849" y="526" font-size="18" fill="#1e293b">guardrails exercised</text>
+  <text x="849" y="502" font-size="18" fill="#1e293b">undo and log tested</text>
+  <text x="849" y="526" font-size="18" fill="#1e293b">safety limits tested</text>
   <text x="849" y="550" font-size="18" fill="#1e293b">owner signs</text>
 
   <rect x="1095" y="200" width="250" height="400" rx="6" fill="#8aaad0" stroke="#3b5f8f" stroke-width="1.5"/>
@@ -66,13 +66,13 @@
   <text x="1109" y="256" font-size="18" fill="#0f172a">Agent: acts, reports</text>
   <text x="1109" y="280" font-size="18" fill="#0f172a">Human: reads summary</text>
   <text x="1109" y="312" font-size="18" font-weight="700" fill="#0f172a">To enter:</text>
-  <text x="1109" y="372" font-size="18" fill="#0f172a">higher threshold</text>
-  <text x="1109" y="396" font-size="18" fill="#0f172a">on fresh data</text>
-  <text x="1109" y="420" font-size="18" fill="#0f172a">never-cases: zero</text>
+  <text x="1109" y="372" font-size="18" fill="#0f172a">a higher bar passed</text>
+  <text x="1109" y="396" font-size="18" fill="#0f172a">on new cases</text>
+  <text x="1109" y="420" font-size="18" fill="#0f172a">no forbidden actions</text>
   <text x="1109" y="444" font-size="18" fill="#0f172a">in production too</text>
   <text x="1109" y="468" font-size="18" fill="#0f172a">weekly sample read</text>
   <text x="1109" y="492" font-size="18" fill="#0f172a">by a person</text>
-  <text x="1109" y="516" font-size="18" fill="#0f172a">guardrails stay on</text>
+  <text x="1109" y="516" font-size="18" fill="#0f172a">safety limits stay on</text>
   <text x="1109" y="540" font-size="18" fill="#0f172a">owner signs</text>
 
   <!-- Cap line for irreversible actions: the top of tier 2 -->
@@ -82,5 +82,5 @@
   <path d="M 1180 194 C 1120 130, 1030 130, 978 262" fill="none" stroke="#b42318" stroke-width="3" marker-end="url(#arrow-red)"/>
   <text x="1080" y="122" font-size="18" font-weight="700" fill="#b42318" text-anchor="middle">Demotion drops one tier at once</text>
 
-  <text x="55" y="628" font-size="18" fill="#475569">Illustrative thresholds: 0.90 to enter tier 2, 0.95 for tier 3, 0.98 for tier 4. Set your own per action type and risk.</text>
+  <text x="55" y="628" font-size="18" fill="#475569">Illustrative pass rates: 0.90 to enter tier 2, 0.95 for tier 3, 0.98 for tier 4. Set your own per action type and risk.</text>
 </svg>
